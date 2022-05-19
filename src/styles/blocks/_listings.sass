@@ -1,0 +1,71 @@
+.listings
+    min-height: 75.25rem
+    padding: 6.25rem 0 6.25rem 0
+    background: #FAFAFC
+    &__subtitle
+        font-size: 1.125rem
+        display: block
+        width: 35.875rem
+        color: #6F7278
+    &__wrapper
+        margin-top: 1.875rem
+        display: grid
+        grid-template-columns: 32.5% 32.5% 32.5%
+        column-gap:1rem
+    &__item
+        width: 23.688rem
+        height: 24.063rem
+    &__itemImg2
+        height: 16.688rem
+    &__itemTitle
+        letter-spacing: 0.125rem
+        text-transform: uppercase
+        color: #6F7278
+        font-size: 0.75rem
+        text-align: center
+    &__itemSubtitle
+        color: #45525B
+        text-align: center
+        font-size: 1.25rem
+    &__itemSpecification
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        color: #45525B
+        font-size: 0.75rem
+        text-align: center
+        margin-top: 0.625rem
+    &__beds,&__bathrooms,&__rooms
+        position: relative
+    &__beds::before
+        content: url("../assets/images/bedIcon.svg")
+        position: absolute
+        left: -0.5rem
+        transform: translateX(-100%)
+    &__bathrooms::before
+        content: url("../assets/images/bathroomsIcon.svg")
+        position: absolute
+        left: -0.5rem
+        transform: translateX(-100%)
+        
+    &__rooms::before
+        content: url("../assets/images/roomsIcon.svg")
+        position: absolute
+        left: -0.5rem
+        transform: translateX(-100%)
+
+
+
+    
+                
+
+
+   
+                
+        
+        
+    
+
+
+            
+      
