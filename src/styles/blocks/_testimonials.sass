@@ -1,0 +1,43 @@
+.testimonials
+    min-height: 38.625rem
+    padding: 6.25rem 0 9.375rem 0
+    position: relative
+    &__slider
+        overflow: hidden        
+    &__sliderWrapper 
+        width: 200vw
+        display: flex
+        transition: 0.5s all
+    &__sliderItem  
+        width: 31.5vw
+        min-height: 17.875rem
+        border: 2px solid rgba(0, 0, 0, 0.1)
+        border-radius: 0.25rem
+        padding: 2.125rem 0 2.375rem     1.938rem  
+        margin-left: 20px
+        position: relative
+        &:first-child
+            margin-left: 0
+    &__reviewTitle
+        color: #333333
+        font-size: 1.5rem
+    &__reviewDescr
+        color: #333333
+        font-size: 0.938rem
+        line-height: 1.375rem
+    &__reviewPerson
+        color: #45525B
+        line-height: 1rem
+        position: absolute
+        bottom: 0
+        &::before
+            content:""
+            width: 2.3px
+            height: 1.5rem
+            background: #FF8A63
+            position: absolute
+            left: -0.625rem
+            top: -0.4rem
+
+
+
