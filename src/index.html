@@ -13,27 +13,27 @@
             <div class="nav__wrapper">
                 <img class="nav__logo" src="./assets/images/navLogo.png" alt="">
                 <dihv class="nav__anchorsWrapper">
-                    <a href="#" class="nav__anchor">Listings</a>
-                    <a href="#" class="nav__anchor">Newsroom</a>
-                    <a href="#" class="nav__anchor">Contact</a>
-                    <a href="#" class="nav__anchor">Our team</a>
+                    <a href="#listings" class="nav__anchor">Listings</a>
+                    <a href="#newsroom" class="nav__anchor">Newsroom</a>
+                    <a href="#contacts" class="nav__anchor">Contact</a>
+                    <a href="#people" class="nav__anchor">Our team</a>
                 </dihv>
             </div>                
         </div>
     </nav>
 
-    <header class="header">
+    <header id="header" class="header">
         <div class="container">
             <div class="header__logo">
                 <img src="./assets/images/headerLogo.png" alt="">
             </div>
             <h1 class="header__descr">We're here to help you find a new home.</h1>
-            <div href="#" class="circle">
+            <a href="#goal" class="circle">
                 <div class="header__arrow"></div>
-            </div>
+            </a>
         </div>
     </header>
-    <section class="goal">
+    <section data-section id="goal" class="goal">
         <div class="container">
             <div class="goal__descrWrapper">
                 <div class="title__wrapper title__wrapper_goal">
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <section class="requirements">
+    <section data-section class="requirements">
         <div class="container">
             <div class="title__wrapper">
                 <div class="title__main title__main_requirements">Our requirements</div>
@@ -68,17 +68,17 @@
             <div class="requirements__locationsWrapper">
                 <img src="./assets/images/requirementsImg.jpg" alt="" class="requirements__img">
                 <div class="requirements__descrWrapper">
-                    <div class="requirements__locationsDescrWrapper">
+                    <div data-img="./assets/images/requirementsimg.jpg" class="requirements__locationsDescrWrapper">
                         <img src="./assets/images/requirementsIcon1.svg" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">Stellar locations</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                     </div>
-                    <div class="requirements__locationsDescrWrapper">
+                    <div data-img="./assets/images/reqimg2.jpeg" class="requirements__locationsDescrWrapper">
                         <img src="./assets/images/requirementsIcon2.svg" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">High quality builds</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                     </div>
-                    <div class="requirements__locationsDescrWrapper">
+                    <div data-img="./assets/images/reqimg3.jpg" class="requirements__locationsDescrWrapper">
                         <img src="./assets/images/requirementsIcon3.svg" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">Expert interior design</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -87,10 +87,10 @@
             </div>
         </div>
     </section>
-    <section class="justImg">
+    <section data-section class="justImg">
         <img src="./assets/images/sectionJustImg.jpg" alt="">
     </section>
-    <section class="listings">
+    <section data-section id="listings" class="listings">
         <div class="container">
             <div class="title__wrapper">
                 <div class="title__main">Current listings</div>
@@ -172,13 +172,13 @@
                 </div>
             </div>
             <div class="anchorWithArrow">
-                <a class="anchorWithArrow__anchor" href="#">Show all listings</a>            
-                <a href="#" class="arrow"></a>    
+                <div class="anchorWithArrow__anchor">Show all listings</div>            
+                <div  class="arrow"></div>    
             </div>
         </div>       
     </section>
 
-    <section class="people">
+    <section data-section id="people" class="people">
         <div class="container">
             <div class="people__contentWrapper">
                 <div class="people__contentItem">
@@ -189,8 +189,8 @@
                     <div class="people__subtitle">Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</div>
 
                     <div class="anchorWithArrow anchorWithArrow_people">
-                        <a class="anchorWithArrow__anchor" href="#">View our team</a>            
-                        <a href="#" class="arrow"></a>    
+                        <div class="anchorWithArrow__anchor">View our team</div>            
+                        <div class="arrow"></div>    
                     </div>
                 </div>
                 <div class="people__contentItem">
@@ -242,7 +242,7 @@
             </div>
         </div>
     </section>
-    <section class="newsroom">
+    <section data-section id="newsroom" class="newsroom">
         <div class="container">
             <div class="title__wrapper">
                 <div class="title__main title__main_newsroom">Newsroom</div>
@@ -276,12 +276,12 @@
                 </div>
             </div>
             <div class="anchorWithArrow anchorWithArrow_newsroom">
-                <a class="anchorWithArrow__anchor" href="#">Newsroom</a>            
-                <a href="#" class="arrow"></a>    
+                <div class="anchorWithArrow__anchor" href="#">Newsroom</div>            
+                <div href="#" class="arrow"></div>    
             </div>
         </div>
     </section>
-    <section class="testimonials">
+    <section data-section class="testimonials">
     <div class="container">
         <div class="title__wrapper">
             <div class="title__main">Testimonials</div>
@@ -325,17 +325,72 @@
     </div>
 </div>
 </section>
-<section class="contacts">
+<section data-section id="contacts" class="contacts">
     <div class="container">
         <p class="contacts__question">Seen enough?</p>
         <div class="contacts__title">Get in touch with us today.</div>
         <div class = "contacts__descr">Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</div>
         <div class="contacts__interactive">
             <button class="contacts__contact showModal">Contact</button>
-            <a href="#" class="contacs__listings">See listings</a>
+            <a href="#listings" class="contacs__listings">See listings</a>
         </div>
     </div>
 </section>
+<footer data-section class="footer">
+    <div class="container">
+        <img src="./assets/images/footerLogo.png" alt="" class="footer__logo">
+        <div class="footer__contentWrapper">
+            <div class="footer__anchors">
+                <div class="footer__anchorsTitle">Pages</div>
+                <a href="#header" class="footer__link">Start</a>
+                <a href="#listings" class="footer__link">Listings</a>
+                <a href="#" class="footer__link">Listings alt. 2</a>
+                <a href="#contacts" class="footer__link">Contact</a>
+                <a href="#" class="footer__link">Legal</a>
+            </div>
+            <div class="footer__anchors">
+                <div class="footer__anchorsTitle">Company</div>
+                <a href="#goal" class="footer__link">About</a>
+                <a href="#people" class="footer__link">Our team</a>
+                <a href="#newsroom" class="footer__link">Newsroom</a>
+            </div>
+            <div class="footer__anchors">
+                <div class="footer__anchorsTitle">Utility</div>
+                <a href="#" class="footer__link">Instructions</a>
+                <a href="#" class="footer__link">Style guide</a>
+                <a href="#" class="footer__link">Licenses</a>
+                <a href="#" class="footer__link">Changelog</a>
+                <a href="#" class="footer__link">404</a>
+            </div>
+            <div class="footer__newsletter">
+                <div class="footer__newsletterTitle">Newsletter</div>
+                <div class="footer__newsletterDescr">Subscribe to our (infrequent) newsletter where we share news about upcoming listings and projects.</div>
+                <form class="form form_newsletter" action="">
+                    <input name="email" required placeholder="Your Email" type="email" class="form__input">
+                    <button class="newsletter__submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__endWrapper">
+            <div class="footer__rights">© Estate, LLC. All rights reserved. Powered by Webflow</div>
+            <div class="footer__sociallinks">
+                <a href="#" class="footer__socialAnchor">
+                    <img src="./assets/images/lnlogo.svg" alt="" class="footer__socialImg">
+                </a>
+                <a href="#" class="footer__socialAnchor">
+                    <img src="./assets/images/facebooklogo.svg" alt="" class="footer__socialImg">
+                </a>
+                <a href="#" class="footer__socialAnchor">
+                    <img src="./assets/images/instalogo.svg" alt="" class="footer__socialImg">
+                </a>
+                <a href="#" class="footer__socialAnchor">
+                    <img src="./assets/images/twitterlogo.svg" alt="" class="footer__socialImg">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="pageUp"><img src="./assets/images/chevron-circle-up-solid.svg" alt=""></div>
 <div class="overlay"></div>
 <div class="modal">
         <div class="modal__close">x</div>  
@@ -344,7 +399,7 @@
         <input name="name" required placeholder="Your FullName" type="text" class="form__input">
         <input name="telephone" required placeholder="Your Telephone Number" type="tel" class="form__input">
         <input name="email" required placeholder="Your Email" type="email" class="form__input">
-        <button class="form__submit">Send Information</button>
+        <button class="modal__submit">Send Information</button>
     </form>
 </div>
 </body>

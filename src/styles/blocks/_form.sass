@@ -1,8 +1,9 @@
 .form
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
+    &_modal
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
     &__input,button
         width: 80%
         height: 2.5rem
@@ -20,3 +21,17 @@
         margin-top: 0.7rem
         color: red
         text-align: center
+    &_newsletter
+        .form__input
+            height: 3.313rem
+            width:100%
+            position: relative
+        .newsletter__submit
+            position: absolute
+            width: 4.563rem
+            height: 2.438rem
+            background: #3A4443
+            border-radius: 10px
+            transform: translate(calc(-100% - 0.5rem),45%)
+            color: #FFFFFF
+            margin-top: 0

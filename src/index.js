@@ -1,4 +1,5 @@
 import "./styles/styles.sass"
+import 'animate.css'
 document.addEventListener(`DOMContentLoaded`,function(e){
 let slider = document.querySelector(`.testimonials__sliderWrapper`)
 let sliderItems = slider.querySelectorAll(`.testimonials__sliderItem`)
@@ -126,12 +127,12 @@ let modalButton = document.querySelector(`.showModal`)
 let overlay = document.querySelector(`.overlay`)
 let modal = document.querySelector(`.modal`)
 let close = modal.querySelector(`.modal__close`)
-let form = modal.querySelector(`form`)
+let form = modal.querySelector(`.form_modal`)
 let formInputs = form.querySelectorAll(`input`)
 let nameInput = modal.querySelector(`[name="name"]`)
 let telephoneInput = modal.querySelector(`[name="telephone"]`)
 let emailInput = modal.querySelector(`[name="email"]`)
-let submitButton = modal.querySelector(`.form__submit`)
+let submitButton = modal.querySelector(`.modal__submit`)
 
 
 function modalClose(e){
@@ -230,7 +231,59 @@ submitButton.addEventListener(`click`,validate)
 //  --------------------------------------------Modal---------------------------------------------
 
 
+// --------------------------------------------SCROLL---------------------------------------------
+let pageUp = document.querySelector(".pageUp")
+pageUp.addEventListener(`mouseover`,function(e){
+    pageUp.style.transform = "translateY(-6px)"
+})
+pageUp.addEventListener(`mouseleave`,function(e){
+    pageUp.style.transform = "translateY(6px)"
+})
+pageUp.addEventListener(`click`,function(e){
+    window.scrollTo(0,0)
+})
 
+
+// --------------------------------------------SCROLL---------------------------------------------
+
+
+
+
+// --------------------------------------------Requirements---------------------------------------------
+
+let descrs = document.querySelectorAll(`.requirements__locationsDescrWrapper`)
+let reqImg = document.querySelector(`.requirements__img`)
+
+descrs.forEach((item)=>{
+    item.addEventListener(`click`,function(e){
+        reqImg.src = item.dataset.img
+    })
+})
+
+
+
+
+// --------------------------------------------Requirements---------------------------------------------
+
+// --------------------------------------------Animation---------------------------------------------
+
+let sections = document.querySelectorAll("[data-section]")
+function onScroll(e){
+    sections.forEach((item)=>{
+        let top = item.getBoundingClientRect().top - window.innerHeight
+        if(item == document.querySelector(`#goal`)){
+            console.log(top)
+        }
+        if(top < 200){
+            item.classList.add("animate__animated")
+            item.classList.add("animate__fadeInUp")
+        }
+    })
+}
+console.log(window.pageYOffset)
+document.addEventListener(`scroll`,debounce(onScroll,10))
+onScroll()
+// --------------------------------------------Animation---------------------------------------------
 
 })
 
