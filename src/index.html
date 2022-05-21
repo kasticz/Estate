@@ -287,42 +287,65 @@
             <div class="title__main">Testimonials</div>
             <div class="title__subtitle">What our customers say.</div>
         </div>
-    </div>
+    
     <div class="testimonials__slider">
         <div class="testimonials__sliderWrapper">
-        <div class="testimonials__sliderItem">
+        <div class="testimonials__sliderItem" data-stars = 5>
             <div class="testimonials__reviewTitle">We found the perfect home!</div>
             <div class="testimonials__reviewDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</div>
             <div class="testimonials__reviewPerson">Nate Davidsson</div>
         </div>
-        <div class="testimonials__sliderItem">
+        <div class="testimonials__sliderItem" data-stars = 4>
             <div class="testimonials__reviewTitle">We're so happy with Estate.</div>
             <div class="testimonials__reviewDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</div>
             <div class="testimonials__reviewPerson">Laura Paulie</div>
         </div>
-        <div class="testimonials__sliderItem">
+        <div class="testimonials__sliderItem" data-stars = 5>
             <div class="testimonials__reviewTitle">Thank you for our beautiful home.</div>
             <div class="testimonials__reviewDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</div>
             <div class="testimonials__reviewPerson">Greg Todd</div>
         </div>
-        <div class="testimonials__sliderItem">
+        <div class="testimonials__sliderItem" data-stars = 5>
             <div class="testimonials__reviewTitle">My dream has come true. Thank you!</div>
             <div class="testimonials__reviewDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</div>
             <div class="testimonials__reviewPerson">John Smith</div>
         </div>
-        <div class="testimonials__sliderItem">
+        <div class="testimonials__sliderItem" data-stars = 4>
             <div class="testimonials__reviewTitle">I liked your professional approach</div>
             <div class="testimonials__reviewDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</div>
             <div class="testimonials__reviewPerson">Amanda Green</div>
         </div>
-    </div>
-    </div>
+    </div>    
+</div>
     <div class="circle circle_testimonials" data-left=true>
-        <div class="arrow arrow_testimonials" data-left></div>
+        <div class="arrow arrow_testimonials" data-left = true></div>
     </div>
     <div class="circle circle_testimonials" data-right = true>
-        <div class="arrow arrow_testimonials" data-right></div>
+        <div class="arrow arrow_testimonials" data-right = true></div>
+    </div>
+</div>
+</section>
+<section class="contacts">
+    <div class="container">
+        <p class="contacts__question">Seen enough?</p>
+        <div class="contacts__title">Get in touch with us today.</div>
+        <div class = "contacts__descr">Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</div>
+        <div class="contacts__interactive">
+            <button class="contacts__contact showModal">Contact</button>
+            <a href="#" class="contacs__listings">See listings</a>
+        </div>
     </div>
 </section>
+<div class="overlay"></div>
+<div class="modal">
+        <div class="modal__close">x</div>  
+    <div class="modal__title">Please, fill in your personal information</div>
+    <form class="form form_modal">
+        <input name="name" required placeholder="Your FullName" type="text" class="form__input">
+        <input name="telephone" required placeholder="Your Telephone Number" type="tel" class="form__input">
+        <input name="email" required placeholder="Your Email" type="email" class="form__input">
+        <button class="form__submit">Send Information</button>
+    </form>
+</div>
 </body>
 </html>

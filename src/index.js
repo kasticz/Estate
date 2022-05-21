@@ -4,9 +4,9 @@ let slider = document.querySelector(`.testimonials__sliderWrapper`)
 let sliderItems = slider.querySelectorAll(`.testimonials__sliderItem`)
 let arrowLeft = document.querySelector(`.circle_testimonials[data-left]`)
 let arrowRight = document.querySelector(`.circle_testimonials[data-right]`)
-
+//   --------------------------------------SLIDER------------------------------------------
 let sliderPosition = 0;
-let itemsVisible = 3;
+let itemsVisible = 2;
 function scrollLeft(itemWidth,marginLeft){
     if(sliderPosition >=0){                   
         return
@@ -15,11 +15,12 @@ function scrollLeft(itemWidth,marginLeft){
     sliderPosition += itemWidth + marginLeft   
 }
 function scrollRight(itemWidth,marginLeft){
-    if(sliderPosition <= -(sliderItems.length - itemsVisible) * itemWidth + marginLeft ){
+    if(sliderPosition <= -(sliderItems.length - itemsVisible) * itemWidth - marginLeft ){
         return
     }
     slider.style.transform = `translateX(${sliderPosition - itemWidth - marginLeft }px)`
     sliderPosition -= itemWidth + marginLeft 
+    console.log(sliderPosition, -(sliderItems.length - itemsVisible) * itemWidth + marginLeft)
 }
 function scrollSlider(e){  
     let itemWidth = parseInt(getComputedStyle(sliderItems[0]).width);
@@ -94,6 +95,142 @@ function debounce(func, wait, immediate) {
   
       if (callNow) func.apply(context, args);
     };
-  };
+  }
+//   --------------------------------------SLIDER------------------------------------------
+
+
+
+//  --------------------------------------------STARS---------------------------------------------
+
+let blackStar = document.createElement(`img`)
+blackStar.src = "./assets/images/starBlack.svg"
+
+let whiteStar = document.createElement(`img`)
+whiteStar.src = "./assets/images/starWhite.svg"
+sliderItems.forEach((item)=>{
+    let blackStarsNum = item.dataset.stars
+    if(blackStarsNum < 5){
+        for(let i = 0; i < 5 - blackStarsNum;i++){
+            item.prepend(whiteStar.cloneNode())
+        }
+    }
+    for(let i=0;i < blackStarsNum;i++){
+        item.prepend(blackStar.cloneNode())                
+    }
+
+})
+//  --------------------------------------------STARS---------------------------------------------
+
+//  --------------------------------------------MODAL---------------------------------------------
+let modalButton = document.querySelector(`.showModal`)
+let overlay = document.querySelector(`.overlay`)
+let modal = document.querySelector(`.modal`)
+let close = modal.querySelector(`.modal__close`)
+let form = modal.querySelector(`form`)
+let formInputs = form.querySelectorAll(`input`)
+let nameInput = modal.querySelector(`[name="name"]`)
+let telephoneInput = modal.querySelector(`[name="telephone"]`)
+let emailInput = modal.querySelector(`[name="email"]`)
+let submitButton = modal.querySelector(`.form__submit`)
+
+
+function modalClose(e){
+    modal.style.display = `none`
+    overlay.style.display = `none`
+}
+
+
+function onModalClick(e){
+    formInputs.forEach(item=> item.value = "")
+   modal.style.display = `flex`
+    overlay.style.display = `block`
+    document.querySelector(`.modal__close`).addEventListener(`click`,modalClose)
+    overlay.addEventListener(`click`,modalClose)
+}
+
+
+function validate(e){
+
+    e.preventDefault()   
+
+
+    let alph = `abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэя`
+    let nums = [`0`,`1`,`2`,`3`,`4`,`5`,`6`,`7`,`8`,`9`]
+    let telephoneValue = telephoneInput.value
+    let emailValue = emailInput.value
+    let errors = form.querySelectorAll(".form__error")
+
+
+    errors.forEach(item=>item.remove()) 
+
+
+    if(nameInput.value.length > 0) {
+        for(let letter of nameInput.value){
+            if(!alph.includes(letter.toLowerCase())){    
+                createError("Name should only contain letters",nameInput)    
+            }
+            
+        }  
+
+    }  
+
+
+    if(telephoneValue.length > 0){
+        for(let num of telephoneValue.split(``)){
+            if(!nums.includes(num)){   
+                createError("Telephone number should only contain numbers.",telephoneInput)       
+            }            
+        }  
+        if(telephoneValue.length > 12 || telephoneValue.length < 6){      
+            createError("This telephone number is too short",telephoneInput)
+      }  
+    }
+
+
+    if(emailValue.length > 0){
+        let at = emailValue.indexOf("@")
+        let dot = emailValue.indexOf(".")            
+        if((at == -1 || dot == -1) || dot == emailValue.length - 1 || at == emailValue.length - 1 || emailValue.length < 6){
+            createError(`This email is invalid`,emailInput)               
+        }
+    }
+
+
+    if(!nameInput.value || !telephoneValue || !emailValue){
+        createError("Please, fill in your personal information",emailInput)
+    }
+
+
+    if(!form.querySelector(`.form__error`)){
+        let prevModal = modal.innerHTML
+        let thankYou = document.createElement(`div`)
+        thankYou.classList.add("thankYou")
+        thankYou.textContent = "Thank You! We will contact you soon"
+        modal.append(thankYou)
+        setTimeout(() => {
+            modalClose() 
+            thankYou.remove()           
+        }, 2500);
+    }
+
+
+    function createError(errorText,element){
+        let error = document.createElement('div')
+        error.classList.add('form__error')
+        error.textContent = errorText
+        element.insertAdjacentHTML('afterend',error.outerHTML)    
+    }
+
+
+}
+
+
+modalButton.addEventListener(`click`,onModalClick)
+submitButton.addEventListener(`click`,validate)
+//  --------------------------------------------Modal---------------------------------------------
+
+
+
+
 })
 
