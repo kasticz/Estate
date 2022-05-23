@@ -2,6 +2,7 @@
     min-height: 38.625rem
     padding: 6.25rem 0 9.375rem 0
     position: relative
+    visibility: hidden
     &__slider
         overflow: hidden        
     &__sliderWrapper 
@@ -38,6 +39,22 @@
             position: absolute
             left: -0.625rem
             top: -0.4rem
+    &__sliderDots
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        display: none
+        margin-top: 1rem            
+    &__sliderDot        
+        width: 1rem
+        height: 1rem
+        background: #7c7878
+        border-radius: 50%
+        margin-left: 1rem
+        &:nth-child(1)
+            background: black
+            margin-left: 0
+            
 
 
 

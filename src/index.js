@@ -7,21 +7,30 @@ let arrowLeft = document.querySelector(`.circle_testimonials[data-left]`)
 let arrowRight = document.querySelector(`.circle_testimonials[data-right]`)
 //   --------------------------------------SLIDER------------------------------------------
 let sliderPosition = 0;
-let itemsVisible = 2;
+let itemsVisible = window.innerWidth > 700 ? 2 : 1;
+function highlightDot(){
+    let dots = document.querySelectorAll(`.testimonials__sliderDot`)
+    let width = slider.offsetWidth / sliderItems.length
+    let currElem = Math.floor(-sliderPosition / width)
+    dots.forEach(item=> item.style.background = "#7c7878")
+    dots[currElem].style.background = "black"
+
+}
 function scrollLeft(itemWidth,marginLeft){
     if(sliderPosition >=0){                   
         return
     }
     slider.style.transform = `translateX(${sliderPosition + itemWidth + marginLeft}px)` 
-    sliderPosition += itemWidth + marginLeft   
+    sliderPosition += itemWidth + marginLeft
+    highlightDot()   
 }
 function scrollRight(itemWidth,marginLeft){
     if(sliderPosition <= -(sliderItems.length - itemsVisible) * itemWidth - marginLeft ){
         return
     }
     slider.style.transform = `translateX(${sliderPosition - itemWidth - marginLeft }px)`
-    sliderPosition -= itemWidth + marginLeft 
-    console.log(sliderPosition, -(sliderItems.length - itemsVisible) * itemWidth + marginLeft)
+    sliderPosition -= itemWidth + marginLeft
+    highlightDot()     
 }
 function scrollSlider(e){  
     let itemWidth = parseInt(getComputedStyle(sliderItems[0]).width);
@@ -33,46 +42,45 @@ function scrollSlider(e){
     }
 }
 function scrollMobile(e){
-    let initialSliderPos = sliderPosition;
-    const debouncedScrollLeft = debounce(scrollLeft,50)
-    const debouncedScrollRight = debounce(scrollRight,50)
-    const debouncedTouchMove = debounce(onTouchMove,30)
+    // let initialSliderPos = sliderPosition;
+    const debouncedScrollLeft = debounce(scrollLeft,30)
+    const debouncedScrollRight = debounce(scrollRight,30)
+    const debouncedTouchMove = debounce(onTouchMove,1)
     let prevCoords = e.touches[0].clientX;
     let itemWidth = parseInt(getComputedStyle(sliderItems[0]).width);
     let marginLeft = parseInt(getComputedStyle(sliderItems[1]).marginLeft)
     let firstTouchCoords = e.touches[0].clientX
     function onTouchMove(e){
         let currCoords = e.touches[0].clientX 
-        let coordsDiff = currCoords - prevCoords;    
-        if(currCoords - firstTouchCoords > itemWidth / 2){           
-            sliderPosition = initialSliderPos;
-            initialSliderPos = null
-            e.target.removeEventListener(`touchmove`,debouncedTouchMove)
+        let coordsDiff = currCoords - prevCoords; 
+        if(currCoords - firstTouchCoords > itemWidth / 3){ 
+            // sliderPosition = initialSliderPos; 
+            // initialSliderPos = null                
+            slider.removeEventListener(`touchmove`,debouncedTouchMove)             
             debouncedScrollLeft(itemWidth,marginLeft)            
             return
         }
-        if(firstTouchCoords -  currCoords > itemWidth / 2){
-            sliderPosition = initialSliderPos;
-            initialSliderPos = null;
-            e.target.removeEventListener(`touchmove`,debouncedTouchMove)
+        if(firstTouchCoords -  currCoords > itemWidth / 3){
+            // sliderPosition = initialSliderPos;
+            // initialSliderPos = null
+            slider.removeEventListener(`touchmove`,debouncedTouchMove)       
             debouncedScrollRight(itemWidth,marginLeft)            
             return
-        }  
-        sliderPosition += coordsDiff
-        slider.style.transform = `translateX(${sliderPosition}px)`;  
-        console.log(initialSliderPos)
-        prevCoords = currCoords;           
+        } 
+        // slider.style.transform = `translateX(${sliderPosition - coordsDiff}px)`
+        // sliderPosition += coordsDiff
+        // prevCoords = currCoords;           
     }
     function onTouchEnd(e){
-        if(initialSliderPos != null){
-            slider.style.transform = `translateX(${initialSliderPos}px)`;
-        }        
-        e.target.removeEventListener(`touchmove`,debouncedTouchMove)
-        e.target.removeEventListener(`touchend`,onTouchEnd)
-        console.log(initialSliderPos)
+        // if(!initialSliderPos){
+        //     sliderPosition = initialSliderPos
+        //     slider.style.transform = `translateX(${sliderPosition})`        
+        // }
+
+        slider.removeEventListener(`touchmove`,debouncedTouchMove)     
     }
-    e.target.addEventListener(`touchmove`,debouncedTouchMove)
-    e.target.addEventListener(`touchend`,onTouchEnd)
+    slider.addEventListener(`touchmove`,debouncedTouchMove)
+    slider.addEventListener(`touchend`,onTouchEnd)
 }
 slider.addEventListener(`touchstart`,scrollMobile)
 arrowLeft.addEventListener(`click`,scrollSlider)
@@ -105,9 +113,13 @@ function debounce(func, wait, immediate) {
 
 let blackStar = document.createElement(`img`)
 blackStar.src = "./assets/images/starBlack.svg"
+blackStar.style.width = "1.125rem"
+blackStar.style.height = "1.125rem"
 
 let whiteStar = document.createElement(`img`)
 whiteStar.src = "./assets/images/starWhite.svg"
+whiteStar.style.width = "1.125rem"
+whiteStar.style.height = "1.125rem"
 sliderItems.forEach((item)=>{
     let blackStarsNum = item.dataset.stars
     if(blackStarsNum < 5){
@@ -251,7 +263,7 @@ pageUp.addEventListener(`click`,function(e){
 
 // --------------------------------------------Requirements---------------------------------------------
 
-let descrs = document.querySelectorAll(`.requirements__locationsDescrWrapper`)
+let descrs = document.querySelectorAll(`.requirements__descrWrapper`)
 let reqImg = document.querySelector(`.requirements__img`)
 
 descrs.forEach((item)=>{
@@ -265,25 +277,49 @@ descrs.forEach((item)=>{
 
 // --------------------------------------------Requirements---------------------------------------------
 
-// --------------------------------------------Animation---------------------------------------------
+// --------------------------------------------Animation&lazyLoad---------------------------------------------
 
 let sections = document.querySelectorAll("[data-section]")
-function onScroll(e){
+let imgs = document.querySelectorAll("img");
+let animHeight = window.innerWidth > 1200 ? "31.25rem": window.innerWidth > 700 ? "26rem": "20rem"
+
+function getTopCoord(elem){
+    return elem.getBoundingClientRect().top - window.innerHeight
+}
+
+function animateSections(e){
     sections.forEach((item)=>{
-        let top = item.getBoundingClientRect().top - window.innerHeight
-        if(item == document.querySelector(`#goal`)){
-            console.log(top)
-        }
+        let top = getTopCoord(item)
         if(top < 200){
-            item.classList.add("animate__animated")
-            item.classList.add("animate__fadeInUp")
+            item.style.visibility = "visible"
+            item.style.transform = "translateY(0)"
         }
     })
 }
-console.log(window.pageYOffset)
-document.addEventListener(`scroll`,debounce(onScroll,10))
-onScroll()
-// --------------------------------------------Animation---------------------------------------------
+function lazyLoadImgs(e){
+    imgs.forEach((item)=>{        
+        if(item.getAttribute("src") == "./assets/images/imgPlaceholder.png"){
+            let top = getTopCoord(item)
+            if(top < 500){
+                item.src = item.dataset.imgsrc
+            }
+        }
+    })
+}
+if(window.pageYOffset == 0){
+    sections.forEach((item)=>{
+        item.style.transform = `translateY(${animHeight})`
+        item.style.transition = "2s all"
+    })
+    document.addEventListener(`scroll`,debounce(animateSections,10))    
+}else{
+    sections.forEach((item)=>{
+        item.style.visibility = "visible"
+    })
+}
+document.addEventListener(`scroll`,debounce(lazyLoadImgs,10))
+lazyLoadImgs()
+// --------------------------------------------Animation&lazyLoad---------------------------------------------
 
 })
 

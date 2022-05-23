@@ -1,3 +1,23 @@
+*
+    box-sizing: border-box
+    transition: 1s all
+    margin: 0
+    padding: 0
+    font-weight: normal
+    font-size: 1rem
+    --animate-duration: 2s
+body
+    font-family: "Poppins", sans-serif
+
+html
+    font-size: 1vw
+    scroll-behavior: smooth
+.container
+    width:73rem
+    margin: 0 auto
+    position: relative
+
+    
 @import "variables.sass"
 @import "./blocks/nav.sass"
 @import "./blocks/header.sass"
@@ -17,26 +37,4 @@
 @import "./blocks/form.sass"
 @import "./blocks/footer.sass"
 @import "./blocks/pageUp.sass"
-*
-    box-sizing: border-box
-    transition: 1s all
-    margin: 0
-    padding: 0
-    font-weight: normal
-    font-size: 1rem
-    --animate-duration: 2s
-body
-    font-family: "Poppins", sans-serif
-
-html
-    font-size: 16px
-    scroll-behavior: smooth
-
-
-
-
-
-.container
-    width:73rem
-    margin: 0 auto
-    position: relative
+@import "./media/media.sass"

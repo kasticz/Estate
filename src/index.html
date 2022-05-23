@@ -11,7 +11,7 @@
     <nav class="nav">
         <div class="container">
             <div class="nav__wrapper">
-                <img class="nav__logo" src="./assets/images/navLogo.png" alt="">
+                <a href="#header"><img class="nav__logo"  src="./assets/images/navLogo.png" alt=""></a>
                 <dihv class="nav__anchorsWrapper">
                     <a href="#listings" class="nav__anchor">Listings</a>
                     <a href="#newsroom" class="nav__anchor">Newsroom</a>
@@ -29,7 +29,7 @@
             </div>
             <h1 class="header__descr">We're here to help you find a new home.</h1>
             <a href="#goal" class="circle">
-                <div class="header__arrow"></div>
+                <img src="./assets/images/arr.svg" alt="" class="arrow arrow_header">
             </a>
         </div>
     </header>
@@ -47,7 +47,7 @@
                         <p>                        Interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
                     </div>
                     <div class="goal__brokerInfo">
-                        <img src="./assets/images/brokerImg.png" alt="" class="goal__brokerImg">
+                        <img data-imgsrc = ./assets/images/brokerImg.png  src="./assets/images/imgPlaceholder.png" alt="" class="goal__brokerImg">
                         <div class="goal__brokerDescr">
                             <span>Ava Orn</span>
                             <span>Managing Broker</span>
@@ -66,29 +66,32 @@
             </div>
             <div class="requirements__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus.</div>
             <div class="requirements__locationsWrapper">
-                <img src="./assets/images/requirementsImg.jpg" alt="" class="requirements__img">
-                <div class="requirements__descrWrapper">
-                    <div data-img="./assets/images/requirementsimg.jpg" class="requirements__locationsDescrWrapper">
-                        <img src="./assets/images/requirementsIcon1.svg" alt="" class="requirements__locationsIcon">
+                <div class="requirements__imgWrapper">    
+                        <img data-imgsrc = ./assets/images/requirementsImg.jpg src="./assets/images/imgPlaceholder.png" alt="" class="requirements__img"></div>
+                <div class="requirements__locationsDescrWrapper">
+                <div data-img = "./assets/images/requirementsimg.jpg" class="requirements__descrWrapper">     
+                        <img data-imgsrc="./assets/images/requirementsIcon1.svg" src="./assets/images/imgPlaceholder.png" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">Stellar locations</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                    </div>
-                    <div data-img="./assets/images/reqimg2.jpeg" class="requirements__locationsDescrWrapper">
-                        <img src="./assets/images/requirementsIcon2.svg" alt="" class="requirements__locationsIcon">
+                    </div>   
+                        <div data-img = "./assets/images/reqimg2.jpeg" class="requirements__descrWrapper">
+                        <img data-imgsrc="./assets/images/requirementsIcon2.svg" src="./assets/images/imgPlaceholder.png" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">High quality builds</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                     </div>
-                    <div data-img="./assets/images/reqimg3.jpg" class="requirements__locationsDescrWrapper">
-                        <img src="./assets/images/requirementsIcon3.svg" alt="" class="requirements__locationsIcon">
+                    
+                    <div data-img = "./assets/images/reqimg3.jpg" class="requirements__descrWrapper">
+                        <img data-imgsrc="./assets/images/requirementsIcon3.svg" src="./assets/images/imgPlaceholder.png" alt="" class="requirements__locationsIcon">
                         <div class="requirements__locationsTitle">Expert interior design</div>
                         <div class="requirements__locationsDescr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                     </div>
+                    </div
                 </div>
             </div>
         </div>
     </section>
     <section data-section class="justImg">
-        <img src="./assets/images/sectionJustImg.jpg" alt="">
+        <img data-imgsrc="./assets/images/sectionJustImg.jpg" src="./assets/images/imgPlaceholder.png" alt="">
     </section>
     <section data-section id="listings" class="listings">
         <div class="container">
@@ -99,17 +102,17 @@
             <div class="listings__subtitle">Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</div>
             <div class="listings__wrapper">
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg1.jpg" alt="" class="listings__itemImg">
+                    <img data-imgsrc="./assets/images/Listingsimg1.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="listings__itemImg">
                     <div class="listings__itemTitle">House</div>
                     <div class="listings__itemSubtitle">California St.</div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds">16 beds</div>
-                        <div class="listings__bathrooms">2 bathrooms</div>
-                        <div class="listings__rooms">11 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon"> 16 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon"> 2 bathrooms</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon">11 rooms</div>
                     </div>
                 </div>
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg2.jpg" alt="" class="listings__itemImg2">
+                    <img data-imgsrc="./assets/images/Listingsimg2.jpg" src="./assets/images/imgPlaceholder.png" alt="" class=" listings__itemImg listings__itemImg2">
                     <div class="listings__itemTitle">
                         Villa                        
                     </div>
@@ -117,63 +120,63 @@
                         Welford Gardens
                     </div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds">12 beds</div>
-                        <div class="listings__bathrooms">3 bathrooms</div>
-                        <div class="listings__rooms">16 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon">12 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon">3 bathrooms</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon">16 rooms</div>
                     </div>
                 </div>
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg3.jpg" alt="" class="listings__itemImg">
+                    <img data-imgsrc="./assets/images/Listingsimg3.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="listings__itemImg">
                     <div class="listings__itemTitle">House                        </div>
                     <div class="listings__itemSubtitle">
                         The Grove
                     </div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds">12 beds</div>
-                        <div class="listings__bathrooms">2 bathrooms</div>
-                        <div class="listings__rooms">14 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon">12 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon">2 bathrooms</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon">14 rooms</div>
                     </div>
                 </div>
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg4.jpg" alt="" class="listings__itemImg">
+                    <img data-imgsrc="./assets/images/Listingsimg4.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="listings__itemImg">
                     <div class="listings__itemTitle">Apartment </div>
-                    <div class="listings__Subtitle">
+                    <div class="listings__itemSubtitle">
                         Wallace St.
                     </div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds">10 beds</div>
-                        <div class="listings__bathrooms">2 bathrooms</div>
-                        <div class="listings__rooms">8 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon">10 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon">2 bathrooms</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon">8 rooms</div>
                     </div>
                 </div>
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg5.jpg" alt="" class="listings__itemImg">
+                    <img data-imgsrc="./assets/images/Listingsimg5.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="listings__itemImg">
                     <div class="listings__itemTitle">Apartment</div>
                     <div class="listings__itemSubtitle">
                         Dwight Way
                     </div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds"> 8 beds</div>
-                        <div class="listings__bathrooms">1 bathroom</div>
-                        <div class="listings__rooms">6 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon"> 8 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon">1 bathroom</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon">6 rooms</div>
                     </div>
                 </div>
                 <div class="listings__item">
-                    <img src="./assets/images/Listingsimg6.jpg" alt="" class="listings__itemImg">
+                    <img data-imgsrc="./assets/images/Listingsimg6.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="listings__itemImg">
                     <div class="listings__itemTitle">House</div>
                     <div class="listings__itemSubtitle">
                         North Avenue
                     </div>
                     <div class="listings__itemSpecification">
-                        <div class="listings__beds"> 14 beds</div>
-                        <div class="listings__bathrooms">3 bathrooms</div>
-                        <div class="listings__rooms">11 rooms</div>
+                        <div class="listings__beds"> <img src="./assets/images/bedIcon.svg" alt="" class="listings__bedIcon"> 14 beds</div>
+                        <div class="listings__bathrooms"> <img src="./assets/images/bathroomsIcon.svg" alt="" class="listings__bathroomIcon">3 bathrooms</div>
+                        <div class="listings__rooms"> <img src="./assets/images/roomsIcon.svg" alt="" class="listings__roomsIcon"> 11 rooms</div>
                     </div>
                 </div>
             </div>
             <div class="anchorWithArrow">
                 <div class="anchorWithArrow__anchor">Show all listings</div>            
-                <div  class="arrow"></div>    
+                <img src="./assets/images/arrow.svg" alt="" class="arrow arrow_listings"> 
             </div>
         </div>       
     </section>
@@ -190,26 +193,27 @@
 
                     <div class="anchorWithArrow anchorWithArrow_people">
                         <div class="anchorWithArrow__anchor">View our team</div>            
-                        <div class="arrow"></div>    
+                        <img src="./assets/images/arrow.svg" alt="" class="arrow arrow_people">     
                     </div>
                 </div>
+                <div class="people__mobileWrapper">
                 <div class="people__contentItem">
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg1.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg1.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">Ava Orn</div>
                             <div class="people__staffDescrPost">Managing Broker</div>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg2.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg2.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">Ella Hessel</div>
                             <div class="people__staffDescrPost">Agent</div>
                         </div>
                     </div>
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg3.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg3.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">Daryl Gislason</div>
                             <div class="people__staffDescrPost">REALTOR</div>
@@ -218,27 +222,28 @@
                 </div>
                 <div class="people__contentItem">
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg4.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg4.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">David Sporer</div>
                             <div class="people__staffDescrPost">Agent</div>
                         </div>
                     </div>
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg5.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg5.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">Trevor Torphy</div>
                             <div class="people__staffDescrPost">Agent</div>
                         </div>
                     </div>
                     <div class="people__staffItem">
-                        <img src="./assets/images/peopleImg6.jpg" alt="" class="people__staffImg">
+                        <img data-imgsrc="./assets/images/peopleImg6.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="people__staffImg">
                         <div class="people__staffDescr">
                             <div class="people__staffDescrName">Amanda Giovanni</div>
                             <div class="people__staffDescrPost">REALTOR</div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -250,7 +255,7 @@
             </div>
             <div class="newsroom__wrapper">
                 <div class="newsroom__item">
-                    <a href="#"><img src="./assets/images/newsroomimg1.jpg" alt="" class="newsroom__img"></a>                    
+                    <a href="#"><img data-imgsrc="./assets/images/newsroomimg1.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="newsroom__img"></a>                    
                     <div class="newsroom__descr">
                         <div class="newsroom__itemTitle">Press release</div>
                         <a href=""><div class="newsroom__itemSubtitle">Market watch: are condos still a good investment?</div></a>
@@ -259,7 +264,7 @@
  
                 </div>
                 <div class="newsroom__item">
-                    <a href="#"><img src="./assets/images/newsroomimg2.jpg" alt="" class="newsroom__img"></a>
+                    <a href="#"><img data-imgsrc="./assets/images/newsroomimg2.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="newsroom__img"></a>
                     <div class="newsroom__descr">
                         <div class="newsroom__itemTitle">Announcement</div>
                         <a href="">                    <div class="newsroom__itemSubtitle">The history of great design</div></a>    
@@ -267,7 +272,7 @@
                     </div>
                 </div>
                 <div class="newsroom__item">
-                    <a href="#"><img src="./assets/images/newsroomimg3.jpg" alt="" class="newsroom__img"></a>  
+                    <a href="#"><img data-imgsrc="./assets/images/newsroomimg3.jpg" src="./assets/images/imgPlaceholder.png" alt="" class="newsroom__img"></a>  
                     <div class="newsroom__descr">
                         <div class="newsroom__itemTitle">Company news</div>
                         <a href="">                        <div class="newsroom__itemSubtitle">Designers who changed everything</div></a>
@@ -277,7 +282,7 @@
             </div>
             <div class="anchorWithArrow anchorWithArrow_newsroom">
                 <div class="anchorWithArrow__anchor" href="#">Newsroom</div>            
-                <div href="#" class="arrow"></div>    
+                <img src="./assets/images/arrow.svg" alt="" class="arrow arrow_newsroom">    
             </div>
         </div>
     </section>
@@ -317,11 +322,18 @@
         </div>
     </div>    
 </div>
+<div class="testimonials__sliderDots">
+    <div class="testimonials__sliderDot"></div>
+    <div class="testimonials__sliderDot"></div>
+    <div class="testimonials__sliderDot"></div>
+    <div class="testimonials__sliderDot"></div>
+    <div class="testimonials__sliderDot"></div>
+</div>
     <div class="circle circle_testimonials" data-left=true>
-        <div class="arrow arrow_testimonials" data-left = true></div>
+        <img data-left = true src="./assets/images/arrow.svg" alt="" class="arrow arrow_testimonials"> 
     </div>
     <div class="circle circle_testimonials" data-right = true>
-        <div class="arrow arrow_testimonials" data-right = true></div>
+        <img data-right = true src="./assets/images/arrow.svg" alt="" class="arrow arrow_testimonials"> 
     </div>
 </div>
 </section>
@@ -332,13 +344,13 @@
         <div class = "contacts__descr">Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</div>
         <div class="contacts__interactive">
             <button class="contacts__contact showModal">Contact</button>
-            <a href="#listings" class="contacs__listings">See listings</a>
+            <a href="#listings" class="contacts__listings">See listings</a>
         </div>
     </div>
 </section>
 <footer data-section class="footer">
     <div class="container">
-        <img src="./assets/images/footerLogo.png" alt="" class="footer__logo">
+        <img data-imgsrc="./assets/images/footerLogo.png" src="./assets/images/imgPlaceholder.png" alt="" class="footer__logo">
         <div class="footer__contentWrapper">
             <div class="footer__anchors">
                 <div class="footer__anchorsTitle">Pages</div>
@@ -375,16 +387,16 @@
             <div class="footer__rights">© Estate, LLC. All rights reserved. Powered by Webflow</div>
             <div class="footer__sociallinks">
                 <a href="#" class="footer__socialAnchor">
-                    <img src="./assets/images/lnlogo.svg" alt="" class="footer__socialImg">
+                    <img data-imgsrc="./assets/images/lnlogo.svg" src="./assets/images/imgPlaceholder.png" alt="" class="footer__socialImg">
                 </a>
                 <a href="#" class="footer__socialAnchor">
-                    <img src="./assets/images/facebooklogo.svg" alt="" class="footer__socialImg">
+                    <img data-imgsrc="./assets/images/facebooklogo.svg" src="./assets/images/imgPlaceholder.png" alt="" class="footer__socialImg">
                 </a>
                 <a href="#" class="footer__socialAnchor">
-                    <img src="./assets/images/instalogo.svg" alt="" class="footer__socialImg">
+                    <img data-imgsrc="./assets/images/instalogo.svg" src="./assets/images/imgPlaceholder.png" alt="" class="footer__socialImg">
                 </a>
                 <a href="#" class="footer__socialAnchor">
-                    <img src="./assets/images/twitterlogo.svg" alt="" class="footer__socialImg">
+                    <img data-imgsrc="./assets/images/twitterlogo.svg" src="./assets/images/imgPlaceholder.png" alt="" class="footer__socialImg">
                 </a>
             </div>
         </div>

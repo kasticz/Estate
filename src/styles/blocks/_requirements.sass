@@ -2,10 +2,16 @@
     min-height: 58.219rem
     padding-top: 6.25rem
     padding-bottom: 6.25rem
-    &__img
+    visibility: hidden
+    &__imgWrapper
         width: 30.5rem
-        height: 37.25rem
-        border-radius: 10%
+        height: 37.25rem 
+        display: flex
+        align-items: center       
+    &__img
+        max-width: 100%
+        height: auto
+        border-radius: 10%        
     &__subtitle
         color: #6F7278
         display: block
@@ -17,8 +23,11 @@
     &__locationsWrapper
         display: flex
         justify-content: center
-        align-items: flex-start
+        align-items: center
         margin-top: 1.875rem
+        &:nth-child(1)
+            margin-top: 0
+            
     &__locationsDescrWrapper
         display: flex
         flex-direction: column
@@ -27,7 +36,9 @@
         width: 18.75rem
         padding: 1.313rem 0 1.313rem 1.313rem
         margin-top: 1.438rem
-        margin-left: 2rem
+        margin-left: 2rem        
+    &__descrWrapper
+        margin-top: 1rem
         cursor: pointer 
         &:hover
             background: #FAFAFC            
@@ -40,3 +51,6 @@
     &__locationsDescr
         color: #6F7278
         font-size: 0.875rem
+    &__locationsIcon
+        width: 3rem
+        height: 3rem
