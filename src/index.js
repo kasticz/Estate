@@ -164,7 +164,7 @@ function onModalClick(e){
 
 function validate(e){
 
-    e.preventDefault()   
+    // e.preventDefault()   
 
 
     let alph = `abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэя`
@@ -191,7 +191,8 @@ function validate(e){
     if(telephoneValue.length > 0){
         for(let num of telephoneValue.split(``)){
             if(!nums.includes(num)){   
-                createError("Telephone number should only contain numbers.",telephoneInput)       
+                createError("Telephone number should only contain numbers.",telephoneInput) 
+                break;      
             }            
         }  
         if(telephoneValue.length > 12 || telephoneValue.length < 6){      

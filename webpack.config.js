@@ -13,7 +13,7 @@ module.exports = {
     },
     output: {
         filename: "[name].[hash].js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "docs")
     },
     resolve:{
         extensions:[".js",".json",".png","jpg",".svg"],
@@ -48,7 +48,7 @@ module.exports = {
             patterns:[
                 {
                     from:path.resolve(__dirname, "src/assets/"),
-                    to:path.resolve(__dirname, "dist/assets"),
+                    to:path.resolve(__dirname, "docs/assets"),
                 }
             ]
         }),
