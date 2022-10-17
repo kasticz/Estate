@@ -4,6 +4,11 @@
         flex-direction: column
         justify-content: center
         align-items: center
+        input
+            padding-left: 5px
+        button
+            &:hover
+                background-color: #5c5555
     &__input,button
         width: 80%
         height: 2.5rem
@@ -26,6 +31,12 @@
             height: 3.313rem
             width:100%
             position: relative
+            padding: 0 10px
+            outline: none
+            border: none            
+            &:hover
+                outline: 1px solid black
+                box-shadow: 2px 2px 2px black
         .newsletter__submit
             position: absolute
             width: 4.563rem
@@ -35,3 +46,5 @@
             transform: translate(calc(-100% - 0.5rem),45%)
             color: #FFFFFF
             margin-top: 0
+            &:hover
+                background-color: #3f3b3b

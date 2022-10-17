@@ -20,8 +20,15 @@
     .testimonials
         min-height: 35rem
         &__sliderWrapper
-            width: 250vw 
+            width: 250% 
+        &__sliderItem
+            width: 20%
+            
+
+                
 @media ( max-width: 700px)
+    .container
+        width: 100%
     html
         font-size: 1.6vw
     .nav
@@ -29,16 +36,22 @@
         &__wrapper
             height: 4.125rem
             align-items: center
-            justify-content: space-between
+            justify-content: space-between            
         &__anchorsWrapper
-            width: 40rem
+            width: 80%
+            max-width: 80vw
             a
                 font-size: 2rem
                 line-height: 4rem
         &__logo
             margin-right: 10rem
             height: 4rem
-            width: 10rem
+            width: 100%
+            margin: 0 10px
+        &__logoWrapper
+            width: 15%
+            max-width: 15vw
+
     .header
         padding: 10rem 0 2rem
         min-height: 35rem
@@ -100,21 +113,33 @@
             height: 10rem
     .requirements
         padding: 2rem 0
+        &__img
+            max-height: 300px            
         &__subtitle
             display: none
         &__locationsWrapper
             align-items: center
+            flex-direction: column
         &__imgWrapper
-            width: 40rem
+            width: 100%
+            display: flex
+            justify-content: center
         &__locationsDescrWrapper
             margin: 0
             margin-left: 1rem            
             padding: 0.7rem 0 0.7rem 0.7rem
+            flex-direction: row
+            width: 98%
             img
                 width: 6rem
                 height: 6rem
+        &__descrWrapper
+            width: 30%
+            &:nth-child(n+2)
+                margin-left: 10px
+                
         &__locationsTitle,&__locationsDescr
-            font-size: 1.5rem
+            font-size: 1rem
     .justImg
         min-height: 29rem
     .listings
@@ -225,6 +250,8 @@
         min-height: 30rem   
         &__contentWrapper
             margin-top: 2rem
+            width: 100%
+            justify-content: space-around
         &__anchors
             a
                 margin-top: 1rem
@@ -232,17 +259,18 @@
         &__newsletterDescr
             font-size: 1.5rem
         &__newsletter
-            width: 22.6rem
+            width: 30%
         &__anchorsTitle,&__newsletterTitle            
             font-size: 1.4rem
         &__endWrapper
-             margin-top: 2rem
+             margin-top: 4rem
         &__rights           
             font-size: 1.5rem
+            margin-left: 10px
         &__sociallinks
-            margin-left: 10rem
+            margin-left: 5rem
             font-size: 1.5rem
-            width: 25rem
+            width: 15rem
             justify-content: space-between
         &__socialImg
             width: 2.5rem
@@ -251,18 +279,21 @@
         &_newsletter
             .form__input     
                 height: 5rem
-                font-size: 2rem                       
+                font-size: 1.5rem    
+                padding: 0 0 0 10px                 
             .newsletter__submit
                 font-size: 1.5rem
-                transform: translate(calc(-100% - 0.5rem), 60%)
+                transform: translate(-180%,200%)
                 width: 7rem
                 height: 3rem
     .testimonials
         padding: 2rem 0
         &__sliderWrapper
-            width: 480vw
+            width: 500vw
+            padding-left: 10px
         &__sliderItem
-            width: 100%
+            width: 20%
+                
         &__reviewTitle
             font-size: 2.1rem
         &__reviewDescr
@@ -284,11 +315,26 @@
         &__title
             font-size: 2.2rem
     .pageUp
-        width: 5rem
-        height: 5rem
+        width: 3rem
+        height: 3rem
     
 
-    
+@media ( max-width: 500px)
+
+ .requirements
+        padding: 2rem 0
+        &__img
+            max-height: 200px    
+            max-width: 95%     
+        &__locationsDescrWrapper
+            margin-top: 20px
+            margin-left: 0
+            max-width: 95%
+
+.testimonials
+        &__reviewPerson
+            font-size: 1.5rem
+            bottom: 5px
 
 
 

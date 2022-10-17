@@ -4,11 +4,17 @@
     position: fixed
     background: #FFFFFF
     width: 100%
+    max-width: 100vw
     top: 0
+    left: 0
     z-index: 100
+    display: flex
+    align-items: center
     &__wrapper
         display: flex
         justify-content: center
+        align-items: center
+        width: inherit
     &__logo
         margin-right: 42.688rem
         width: 6.375rem
@@ -22,6 +28,9 @@
         font-size: 0.938rem
         text-decoration: none
         color: #444444
+        &:hover
+            text-decoration: underline
+            color: black
     
 
 

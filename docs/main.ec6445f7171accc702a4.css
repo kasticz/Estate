@@ -3,7 +3,6 @@
   \***************************************************************************************************************/
 * {
   box-sizing: border-box;
-  transition: 1s all;
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -13,6 +12,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
 
 html {
@@ -32,12 +32,18 @@ html {
   position: fixed;
   background: #FFFFFF;
   width: 100%;
+  max-width: 100vw;
   top: 0;
+  left: 0;
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
 .nav__wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: inherit;
 }
 .nav__logo {
   margin-right: 42.688rem;
@@ -54,6 +60,10 @@ html {
   font-size: 0.938rem;
   text-decoration: none;
   color: #444444;
+}
+.nav__anchor:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 .header {
@@ -215,9 +225,13 @@ html {
 .requirements__descrWrapper {
   margin-top: 1rem;
   cursor: pointer;
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.5s all;
 }
 .requirements__descrWrapper:hover {
   background: #FAFAFC;
+  transform: scale(1.2);
 }
 .requirements__locationsTitle {
   margin-top: 0.563rem;
@@ -317,6 +331,9 @@ html {
   text-align: center;
   cursor: pointer;
 }
+.anchorWithArrow:hover div, .anchorWithArrow:hover img {
+  color: black;
+}
 .anchorWithArrow_people {
   margin: 0;
   margin-top: 1rem;
@@ -326,7 +343,6 @@ html {
 }
 .anchorWithArrow__anchor {
   text-decoration: none;
-  color: #45525B;
 }
 
 .people {
@@ -389,6 +405,12 @@ html {
   padding: 6.25rem 0 6.25rem 0;
   visibility: hidden;
 }
+.newsroom a {
+  text-decoration: none;
+}
+.newsroom a:hover {
+  text-decoration: underline;
+}
 .newsroom__wrapper {
   display: flex;
   justify-content: space-between;
@@ -412,6 +434,7 @@ html {
 .newsroom__itemSubtitle {
   margin-top: 0.5rem;
   color: #45525B;
+  text-decoration: none;
 }
 .newsroom__itemDate {
   position: absolute;
@@ -444,6 +467,7 @@ html {
   padding: 2.125rem 0 2.375rem 1.938rem;
   margin-left: 20px;
   position: relative;
+  padding: 10px;
 }
 .testimonials__sliderItem:first-child {
   margin-left: 0;
@@ -461,7 +485,8 @@ html {
   color: #45525B;
   line-height: 1rem;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
 }
 .testimonials__reviewPerson::before {
   content: "";
@@ -469,7 +494,7 @@ html {
   height: 1.5rem;
   background: #FF8A63;
   position: absolute;
-  left: -0.625rem;
+  left: -0.6rem;
   top: -0.4rem;
 }
 .testimonials__sliderDots {
@@ -581,6 +606,9 @@ html {
   color: #45525B;
   cursor: pointer;
 }
+.contacts__interactive button:hover, .contacts__interactive a:hover {
+  background-color: #ece5e5;
+}
 .contacts__interactive a {
   text-decoration: none;
   display: flex;
@@ -613,11 +641,14 @@ html {
   color: red;
   cursor: pointer;
   position: absolute;
-  right: -1.5rem;
+  right: 0.5rem;
   top: 0;
   cursor: pointer;
   font-size: 2.5rem;
   line-height: 1.5rem;
+}
+.modal__close:hover {
+  color: #be5d56;
 }
 .modal .thankYou {
   text-align: center;
@@ -641,6 +672,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.form_modal input {
+  padding-left: 5px;
+}
+.form_modal button:hover {
+  background-color: #5c5555;
 }
 .form__input, .form button {
   width: 80%;
@@ -666,6 +703,13 @@ html {
   height: 3.313rem;
   width: 100%;
   position: relative;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+}
+.form_newsletter .form__input:hover {
+  outline: 1px solid black;
+  box-shadow: 2px 2px 2px black;
 }
 .form_newsletter .newsletter__submit {
   position: absolute;
@@ -676,6 +720,9 @@ html {
   transform: translate(calc(-100% - 0.5rem), 45%);
   color: #FFFFFF;
   margin-top: 0;
+}
+.form_newsletter .newsletter__submit:hover {
+  background-color: #3f3b3b;
 }
 
 .footer {
@@ -707,6 +754,9 @@ html {
   color: #FFFFFF;
   text-decoration: none;
 }
+.footer__link:hover {
+  text-decoration: underline;
+}
 .footer__endWrapper {
   display: flex;
 }
@@ -725,6 +775,9 @@ html {
 .footer__socialImg {
   width: 1.5rem;
   height: 1.5rem;
+}
+.footer__socialImg:nth-child(1) {
+  width: auto;
 }
 
 .pageUp {
@@ -772,10 +825,17 @@ html {
     min-height: 35rem;
   }
   .testimonials__sliderWrapper {
-    width: 250vw;
+    width: 250%;
+  }
+  .testimonials__sliderItem {
+    width: 20%;
   }
 }
 @media (max-width: 700px) {
+  .container {
+    width: 100%;
+  }
+
   html {
     font-size: 1.6vw;
   }
@@ -789,7 +849,8 @@ html {
     justify-content: space-between;
   }
   .nav__anchorsWrapper {
-    width: 40rem;
+    width: 80%;
+    max-width: 80vw;
   }
   .nav__anchorsWrapper a {
     font-size: 2rem;
@@ -798,7 +859,12 @@ html {
   .nav__logo {
     margin-right: 10rem;
     height: 4rem;
-    width: 10rem;
+    width: 100%;
+    margin: 0 10px;
+  }
+  .nav__logoWrapper {
+    width: 15%;
+    max-width: 15vw;
   }
 
   .header {
@@ -881,26 +947,40 @@ html {
   .requirements {
     padding: 2rem 0;
   }
+  .requirements__img {
+    max-height: 300px;
+  }
   .requirements__subtitle {
     display: none;
   }
   .requirements__locationsWrapper {
     align-items: center;
+    flex-direction: column;
   }
   .requirements__imgWrapper {
-    width: 40rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .requirements__locationsDescrWrapper {
     margin: 0;
     margin-left: 1rem;
     padding: 0.7rem 0 0.7rem 0.7rem;
+    flex-direction: row;
+    width: 98%;
   }
   .requirements__locationsDescrWrapper img {
     width: 6rem;
     height: 6rem;
   }
+  .requirements__descrWrapper {
+    width: 30%;
+  }
+  .requirements__descrWrapper:nth-child(n+2) {
+    margin-left: 10px;
+  }
   .requirements__locationsTitle, .requirements__locationsDescr {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .justImg {
@@ -1060,6 +1140,8 @@ html {
   }
   .footer__contentWrapper {
     margin-top: 2rem;
+    width: 100%;
+    justify-content: space-around;
   }
   .footer__anchors a {
     margin-top: 1rem;
@@ -1069,21 +1151,22 @@ html {
     font-size: 1.5rem;
   }
   .footer__newsletter {
-    width: 22.6rem;
+    width: 30%;
   }
   .footer__anchorsTitle, .footer__newsletterTitle {
     font-size: 1.4rem;
   }
   .footer__endWrapper {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   .footer__rights {
     font-size: 1.5rem;
+    margin-left: 10px;
   }
   .footer__sociallinks {
-    margin-left: 10rem;
+    margin-left: 5rem;
     font-size: 1.5rem;
-    width: 25rem;
+    width: 15rem;
     justify-content: space-between;
   }
   .footer__socialImg {
@@ -1093,11 +1176,12 @@ html {
 
   .form_newsletter .form__input {
     height: 5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    padding: 0 0 0 10px;
   }
   .form_newsletter .newsletter__submit {
     font-size: 1.5rem;
-    transform: translate(calc(-100% - 0.5rem), 60%);
+    transform: translate(-180%, 200%);
     width: 7rem;
     height: 3rem;
   }
@@ -1106,10 +1190,11 @@ html {
     padding: 2rem 0;
   }
   .testimonials__sliderWrapper {
-    width: 480vw;
+    width: 500vw;
+    padding-left: 10px;
   }
   .testimonials__sliderItem {
-    width: 100%;
+    width: 20%;
   }
   .testimonials__reviewTitle {
     font-size: 2.1rem;
@@ -1142,7 +1227,25 @@ html {
   }
 
   .pageUp {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
   }
+}
+@media (max-width: 500px) {
+  .requirements {
+    padding: 2rem 0;
+  }
+  .requirements__img {
+    max-height: 200px;
+    max-width: 95%;
+  }
+  .requirements__locationsDescrWrapper {
+    margin-top: 20px;
+    margin-left: 0;
+    max-width: 95%;
+  }
+}
+.testimonials__reviewPerson {
+  font-size: 1.5rem;
+  bottom: 5px;
 }

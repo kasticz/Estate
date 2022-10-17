@@ -164,7 +164,7 @@ function onModalClick(e){
 
 function validate(e){
 
-    // e.preventDefault()   
+    e.preventDefault()   
 
 
     let alph = `abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэя`
@@ -177,15 +177,15 @@ function validate(e){
     errors.forEach(item=>item.remove()) 
 
 
-    if(nameInput.value.length > 0) {
+
         for(let letter of nameInput.value){
             if(!alph.includes(letter.toLowerCase())){    
-                createError("Name should only contain letters",nameInput)    
-            }
-            
+                createError("Name should only contain letters",nameInput)   
+                break; 
+            }            
         }  
 
-    }  
+    
 
 
     if(telephoneValue.length > 0){
@@ -320,7 +320,5 @@ if(window.pageYOffset == 0){
 }
 document.addEventListener(`scroll`,debounce(lazyLoadImgs,10))
 lazyLoadImgs()
-// --------------------------------------------Animation&lazyLoad---------------------------------------------
-
 })
 
